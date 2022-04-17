@@ -1,6 +1,3 @@
-getgenv().itemFarm = false;
-getgenv().autoStand = false;
-
 --ts:Create(game.Players.LocalPlayer.Character.HumanoidRootPart,TweenInfo.new(1),{["CFrame"]=workspace.Items:FindFirstChild("Stand Arrow")})
 
 --// Services
