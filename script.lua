@@ -1,6 +1,18 @@
 getgenv().itemFarm = false;
 getgenv().autoStand = false;
 
+getgenv().Stands = {
+    "StoneFree",
+    "SilverChariot",
+    "Cream"
+}
+
+getgenv().Attributes = {
+    "None",
+    "Godly",
+    "Manic"
+}
+
 function itemFarm()
     spawn(function()
         while wait() do
