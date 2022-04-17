@@ -17,7 +17,7 @@ function itemFarm()
                     if not getgenv().itemFarm then break end
                     local a = v.Handle.Position
                     tp(a.X, a.Y, a.Z)
-                    wait(0.5)
+                    wait(1)
                 end 
             end
         end
@@ -50,6 +50,18 @@ function autoStand()
                     end
                 end
             else
+                for i,v in pairs(_G.stands) do                                                                                          --Check if it matches
+                    if game.Players.LocalPlayer.Data.Stand.Value == v then 
+                        print("stands match!")
+                        return
+                    end
+                end
+                for i,v in pairs(_G.attributes) do                                                                                      --Check if it matches
+                    if game.Players.LocalPlayer.Data.Attri.Value == v then      
+                        print("attributes match!")
+                        return
+                    end
+                end
                 if game.Players.LocalPlayer.Character:FindFirstChild("Rokakaka") then                                                   --If already have stand use roka
                 else
                     game.Players.LocalPlayer.Backpack:FindFirstChild("Rokakaka").Parent = game.Players.LocalPlayer.Character
@@ -63,8 +75,8 @@ end
 
 function tp(x,y,z)
     -- SETTINGS START
-    local valtomove = 15
-    noclip = true
+    local valtomove = 10
+    noclip = false
     anchored = false
     -- SETTINGS END
     
@@ -116,6 +128,7 @@ function tp(x,y,z)
     spawn (function()
     game:GetService("RunService"):BindToRenderStep("",0,function()
     if not game.Players.LocalPlayer.Character:findFirstChildOfClass("Humanoid") then return end
+    if not getgenv().itemFarm then return end
     if moving == true then
     if noclip == true then
     game.Players.LocalPlayer.Character:findFirstChildOfClass("Humanoid"):ChangeState(11)
