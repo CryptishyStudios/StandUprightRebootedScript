@@ -56,8 +56,6 @@ local c = w:CreateFolder("NPC Teleport")
 
 local d = w:CreateFolder("NPC Teleport 2")
 
-local e = w:CreateFolder("Test Folder")
-
 b:Toggle("Toggle Item Farm",function(bool)
     getgenv().itemFarm = bool
     print('Item Farm is:', bool);
@@ -72,11 +70,6 @@ b:Toggle("Toggle Stand Farm",function(bool)
     if bool then
         autoStand()
     end
-end)
-
-
-e:Box("Box","string",function(value) -- "number" or "string"
-    print(value)
 end)
 
 
